@@ -1,0 +1,1 @@
+json.partial! "tipo_consultas/tipo_consulta", tipo_consulta: @tipo_consulta

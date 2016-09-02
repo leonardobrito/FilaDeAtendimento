@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+	  <th>Nome</th>
       <th>Nivel</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @prioridades.each do |prioridade| %>
       <tr>
+		<td><%= prioridade.nome %></td>
         <td><%= prioridade.nivel %></td>
         <td><%= link_to 'Show', prioridade %></td>
         <td><%= link_to 'Edit', edit_prioridade_path(prioridade) %></td>

@@ -69,6 +69,6 @@ class PrioridadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prioridade_params
-      params.require(:prioridade).permit(:nivel)
+      params.require(:prioridade).permit(:nome, :nivel)
     end
 end

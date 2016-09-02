@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nome:</strong>
-  <%= @consulta.nome %>
+  <strong>Inicio:</strong>
+  <%= @consulta.inicio %>
+</p>
+
+<p>
+  <strong>Fim:</strong>
+  <%= @consulta.fim %>
 </p>
 
 <p>
   <strong>Duracao:</strong>
   <%= @consulta.duracao %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @consulta.data %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @consulta.status %>
+</p>
+
+<p>
+  <strong>Numerofila:</strong>
+  <%= @consulta.numeroFila %>
 </p>
 
 <%= link_to 'Edit', edit_consulta_path(@consulta) %> |

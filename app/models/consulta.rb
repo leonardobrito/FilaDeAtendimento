@@ -1,3 +1,4 @@
 class Consulta < ActiveRecord::Base
-    validates :nome, :duracao, presence: true
+	has_many :pacientes
+	has_many :tipo_consulta
 end

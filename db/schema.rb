@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902033516) do
+ActiveRecord::Schema.define(version: 20160902205839) do
 
   create_table "consulta", force: :cascade do |t|
     t.string   "nome"
@@ -21,22 +21,41 @@ ActiveRecord::Schema.define(version: 20160902033516) do
   end
 
   create_table "consultas", force: :cascade do |t|
-    t.string   "nome"
+    t.time     "inicio"
+    t.time     "fim"
     t.time     "duracao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.date     "data"
+    t.string   "status"
+    t.integer  "numeroFila"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "paciente_id"
+    t.integer  "tipo_consulta_id"
   end
+
+  add_index "consultas", ["paciente_id"], name: "index_consultas_on_paciente_id"
+  add_index "consultas", ["tipo_consulta_id"], name: "index_consultas_on_tipo_consulta_id"
 
   create_table "pacientes", force: :cascade do |t|
     t.string   "nome"
     t.string   "cpf"
-    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "prioridade_id"
   end
+
+  add_index "pacientes", ["prioridade_id"], name: "index_pacientes_on_prioridade_id"
 
   create_table "prioridades", force: :cascade do |t|
     t.integer  "nivel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nome"
+  end
+
+  create_table "tipo_consultas", force: :cascade do |t|
+    t.string   "nome"
+    t.time     "duracao"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

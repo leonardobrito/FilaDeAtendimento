@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
-  duracao: 2016-09-02 00:35:16
+  inicio: 2016-09-02 17:23:19
+  fim: 2016-09-02 17:23:19
+  duracao: 2016-09-02 17:23:19
+  data: 2016-09-02
+  status: MyString
+  numeroFila: 1
 
 two:
-  nome: MyString
-  duracao: 2016-09-02 00:35:16
+  inicio: 2016-09-02 17:23:19
+  fim: 2016-09-02 17:23:19
+  duracao: 2016-09-02 17:23:19
+  data: 2016-09-02
+  status: MyString
+  numeroFila: 1

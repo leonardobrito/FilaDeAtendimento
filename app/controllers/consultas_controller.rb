@@ -69,6 +69,6 @@ class ConsultasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def consulta_params
-      params.require(:consulta).permit(:nome, :duracao)
+      params.require(:consulta).permit(:inicio, :fim, :duracao, :data, :status, :numeroFila)
     end
 end

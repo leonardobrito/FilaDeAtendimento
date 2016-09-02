@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :consultas
+  resources :tipo_consultas
   resources :prioridades
-  resources :usuarios
   resources :pacientes
     
   match '/getFila' => 'pacientes#getFila', via: [:get, :post]
-  match '/call' => 'pacientes#call', via: [:get, :post]
+  match '/chamarProximo' => 'pacientes#chamarProximo', via: [:get, :post]
+  match '/chamar' => 'pacientes#chamar', via: [:get, :post]
+  match '/dispensar' => 'pacientes#dispensar', via: [:get, :post]
+  match '/atendimento' => 'pacientes#atendimento', via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

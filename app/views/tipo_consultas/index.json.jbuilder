@@ -1,0 +1,1 @@
+json.array! @tipo_consultas, partial: 'tipo_consultas/tipo_consulta', as: :tipo_consulta

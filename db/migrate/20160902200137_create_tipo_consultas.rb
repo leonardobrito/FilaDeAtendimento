@@ -1,6 +1,6 @@
-class CreateConsultas < ActiveRecord::Migration
+class CreateTipoConsultas < ActiveRecord::Migration
   def change
-    create_table :consultas do |t|
+    create_table :tipo_consultas do |t|
       t.string :nome
       t.time :duracao
 

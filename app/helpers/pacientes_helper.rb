@@ -17,15 +17,15 @@ module PacientesHelper
 #	end
 
 	# Troca o status de quem está na fila ou em atendimento
-	def self.chamada(c)
-		@ch = Paciente.find_by(status: c)
-	    if @ch != nil
-	      @ch.status = c + 1
-	      @ch.save
-	    end
-	end
-
-	def chamada(c)
-		PacientesHelper.chamada(c)
-	end
+#	def self.chamada(c)
+#		@ch = Paciente.find_by(status: c)
+#	    if @ch != nil
+#	      @ch.status = c + 1
+#	      @ch.save
+#	    end
+#	end
+#
+#	def chamada(c)
+#		PacientesHelper.chamada(c)
+#	end
 end

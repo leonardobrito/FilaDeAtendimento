@@ -1,3 +1,4 @@
 class Prioridade < ActiveRecord::Base
-    validates :nivel, presence: true
+    validates :nome, :nivel, presence: true
+	belongs_to :paciente
 end

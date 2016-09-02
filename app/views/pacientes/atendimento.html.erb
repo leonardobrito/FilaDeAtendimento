@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Chamar Próximo', chamarProximo_path %>
+
+<h2>Em atendimento</h2>
+<% if @emAtendimento != nil %>
+  <div class="atendimento">
+    <p class="content"><%= @emAtendimento.nome %></p> 
+    <p class="content">Em Atendimento</p> 
+    <p class="time"><%= @emAtendimento.created_at.strftime("%H:%M") %></p>
+  </div>
+  <div class="bottons">
+	  <booton>Chamar</booton>
+	  <booton>Dispensar</booton>
+  </div>
+<% else %>
+  <div class="paciente">
+    <p class="content">Ninguém em Atendimento</p>
+  </div>
+<% end %>
+<hr/>
+
+<h2>Fila de espera</h2>
+<% if !@filas.empty? %>  
+  <% @filas.each do |f| %> 
+    <div class="paciente">
+      <p class="content"><%= f.nome %></p> 
+      <p class="content">Em Espera</p> 
+      <p class="time"><%= f.created_at.strftime("%H:%M") %></p> 
+	  <div class="bottons">
+	  	<botton><%= link_to 'Chamar',  chamar_path  %></botton>
+	  	<botton><%= link_to 'Dispensar', dispensar_path %></botton>
+	  </div>
+    </div>	
+  <% end %>
+<% else %>
+  <div class="paciente">
+    <p class="content">Ninguém na fila </p>
+  </div>
+<% end %>
+<hr/>
+
+<h2>Atendido</h2>
+<% if !@atendido.empty? %> 
+  <% @atendido.each do |f| %> 
+    <div class="atendido">
+      <p class="content"><%= f.nome %></p> 
+      <p class="content">Atendido</p> 
+      <p class="time"><%= f.created_at.strftime("%H:%M") %></p>
+    </div>
+  <% end %>
+<% end %>
+<hr/>

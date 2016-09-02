@@ -18,7 +18,7 @@ class ConsultasControllerTest < ActionController::TestCase
 
   test "should create consulta" do
     assert_difference('Consulta.count') do
-      post :create, consulta: { duracao: @consulta.duracao, nome: @consulta.nome }
+      post :create, consulta: { data: @consulta.data, duracao: @consulta.duracao, fim: @consulta.fim, inicio: @consulta.inicio, numeroFila: @consulta.numeroFila, status: @consulta.status }
     end
 
     assert_redirected_to consulta_path(assigns(:consulta))
@@ -35,7 +35,7 @@ class ConsultasControllerTest < ActionController::TestCase
   end
 
   test "should update consulta" do
-    patch :update, id: @consulta, consulta: { duracao: @consulta.duracao, nome: @consulta.nome }
+    patch :update, id: @consulta, consulta: { data: @consulta.data, duracao: @consulta.duracao, fim: @consulta.fim, inicio: @consulta.inicio, numeroFila: @consulta.numeroFila, status: @consulta.status }
     assert_redirected_to consulta_path(assigns(:consulta))
   end
 

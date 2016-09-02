@@ -12,15 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <%= f.label :inicio %><br>
+    <%= f.time_select :inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fim %><br>
+    <%= f.time_select :fim %>
   </div>
   <div class="field">
     <%= f.label :duracao %><br>
     <%= f.time_select :duracao %>
   </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :numeroFila %><br>
+    <%= f.number_field :numeroFila %>
+  </div>
   <div class="actions">
     <%= f.submit %>
-    <%= link_to 'Back', consultas_path %>
   </div>
 <% end %>
