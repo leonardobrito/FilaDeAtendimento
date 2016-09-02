@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Entrar na fila', new_paciente_path %>
+<h2>Em atendimento</h2>
+<% if @emAtendimento != nil %>
+  <div class="atendimento">
+    <p class="content"><%= @emAtendimento.nome %></p> 
+    <p class="content">Em Atendimento</p> 
+    <p class="time"><%= @emAtendimento.created_at.strftime("%H:%M") %></p>
+  </div>
+<% else %>
+  <div class="paciente">
+    <p class="content">Ninguém em Atendimento</p>
+  </div>
+<% end %>
+<hr/>
+
+<h2>Fila de espera</h2>
+<% if !@filas.empty? %>  
+  <% @filas.each do |f| %> 
+    <div class="paciente">
+      <p class="content"><%= f.nome %></p> 
+      <p class="content">Em Espera</p> 
+      <p class="time"><%= f.created_at.strftime("%H:%M") %></p> 
+    </div>
+  <% end %>
+<% else %>
+  <div class="paciente">
+    <p class="content">Ninguém na fila </p>
+  </div>
+<% end %>
+<hr/>
+
+ <h2>Atendido</h2>
+<% if !@atendido.empty? %> 
+  <% @atendido.each do |f| %> 
+    <div class="atendido">
+      <p class="content"><%= f.nome %></p> 
+      <p class="content">Atendido</p> 
+      <p class="time"><%= f.created_at.strftime("%H:%M") %></p>
+    </div>
+  <% end %>
+<% end %>
+<hr/>
+
+<%= link_to 'New Paciente', new_paciente_path %>
